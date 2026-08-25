@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" role="img" aria-label="Automation flow: when the public IP address changes the integration fires the myip_wtf_ip_changed event, which can trigger a push notification, a dynamic DNS update or a VPN check">
+  <defs>
+    <style>
+      .t { font-family: ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      .h { font-size: 18px; font-weight: 700; fill: #e6edf3; }
+      .s { font-size: 14px; fill: #9fb0c0; }
+      .m { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px; fill: #ffd257; }
+    </style>
+    <marker id="aah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#41BDF5"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="400" rx="20" fill="#0f1720"/>
+  <rect x="1" y="1" width="1198" height="398" rx="20" fill="none" stroke="#243141" stroke-width="2"/>
+  <text class="t" x="40" y="46" font-size="13" letter-spacing="2" font-weight="600" fill="#7d8fa1">AUTOMATION HOOK</text>
+
+  <g class="t">
+    <rect x="40" y="90" width="300" height="220" rx="14" fill="#16202b" stroke="#28394a" stroke-width="2"/>
+    <text class="h" x="64" y="130">Address changed</text>
+    <text class="s" x="64" y="164">The coordinator compares the</text>
+    <text class="s" x="64" y="186">new answer with the previous</text>
+    <text class="s" x="64" y="208">one — per IP version.</text>
+    <text class="s" x="64" y="248" fill="#7fd4f7">198.51.100.4</text>
+    <text class="s" x="64" y="272" fill="#3ddc97">→ 203.0.113.7</text>
+
+    <path d="M348 200 H408" stroke="#41BDF5" stroke-width="2.5" marker-end="url(#aah)" fill="none"/>
+
+    <rect x="416" y="90" width="320" height="220" rx="14" fill="#1d2430" stroke="#c9922f" stroke-width="2"/>
+    <text class="h" x="440" y="130">Event fires</text>
+    <text class="m" x="440" y="162">myip_wtf_ip_changed</text>
+    <text class="s" x="440" y="196">Data: ip_version, old_ip,</text>
+    <text class="s" x="440" y="218">new_ip, hostname, isp, city,</text>
+    <text class="s" x="440" y="240">country, country_code,</text>
+    <text class="s" x="440" y="262">tor_exit, entry_id</text>
+    <text class="s" x="440" y="292" fill="#7d8fa1">Use it as an automation trigger.</text>
+
+    <path d="M744 200 H804" stroke="#41BDF5" stroke-width="2.5" marker-end="url(#aah)" fill="none"/>
+
+    <rect x="812" y="90" width="348" height="220" rx="14" fill="#16202b" stroke="#28394a" stroke-width="2"/>
+    <text class="h" x="836" y="130">Your automation</text>
+    <text class="s" x="836" y="166">📱  Push the new address to your phone</text>
+    <text class="s" x="836" y="200">🔄  Update a dynamic DNS record</text>
+    <text class="s" x="836" y="234">🛡  Warn when the VPN drops and the</text>
+    <text class="s" x="860" y="256">real ISP address shows up</text>
+    <text class="s" x="836" y="290">🧅  Alert on an unexpected Tor exit</text>
+  </g>
+</svg>

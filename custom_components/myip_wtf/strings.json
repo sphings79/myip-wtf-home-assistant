@@ -1,0 +1,78 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up MyIP.wtf",
+        "description": "Reads the public IP address of this Home Assistant instance from the free myip.wtf service.\n\nThe service is operated by a third party. Its automation policy allows one request per minute and non-commercial use only ({policy_url}). This integration keeps a single global request budget, so both IP versions together never exceed that limit.",
+        "data": {
+          "ipv4": "Track public IPv4 address",
+          "ipv6": "Track public IPv6 address",
+          "scan_interval": "Polling interval"
+        },
+        "data_description": {
+          "ipv4": "Queries ipv4.myip.wtf.",
+          "ipv6": "Queries ipv6.myip.wtf. Turn this off if your connection has no IPv6.",
+          "scan_interval": "Minutes between polling cycles. Each enabled IP version costs one request per cycle, so the minimum is one minute per enabled version."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not reach myip.wtf. Check the internet connection of your Home Assistant host.",
+      "rate_limited": "myip.wtf is currently rate limiting this host. Wait a minute and try again.",
+      "no_ip_version": "Select at least one IP version.",
+      "interval_too_short": "The interval is too short for the number of enabled IP versions. Use at least one minute per enabled version."
+    },
+    "abort": {
+      "already_configured": "MyIP.wtf is already set up.",
+      "single_instance_allowed": "Only a single MyIP.wtf entry is supported."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "MyIP.wtf options",
+        "description": "The myip.wtf automation policy allows one request per minute in total ({policy_url}). The interval below applies to a full polling cycle across all enabled IP versions.",
+        "data": {
+          "ipv4": "Track public IPv4 address",
+          "ipv6": "Track public IPv6 address",
+          "scan_interval": "Polling interval"
+        },
+        "data_description": {
+          "ipv4": "Queries ipv4.myip.wtf.",
+          "ipv6": "Queries ipv6.myip.wtf. Turn this off if your connection has no IPv6.",
+          "scan_interval": "Minutes between polling cycles. Each enabled IP version costs one request per cycle, so the minimum is one minute per enabled version."
+        }
+      }
+    },
+    "error": {
+      "no_ip_version": "Select at least one IP version.",
+      "interval_too_short": "The interval is too short for the number of enabled IP versions. Use at least one minute per enabled version."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "ip_address": { "name": "IP address" },
+      "hostname": { "name": "Hostname" },
+      "isp": { "name": "Internet provider" },
+      "location": { "name": "Location" },
+      "city": { "name": "City" },
+      "country": { "name": "Country" },
+      "country_code": { "name": "Country code" },
+      "ip_changed_at": { "name": "IP changed at" }
+    },
+    "binary_sensor": {
+      "tor_exit": { "name": "Tor exit node" },
+      "reachable": { "name": "Reachable" }
+    }
+  },
+  "issues": {
+    "rate_limited": {
+      "title": "myip.wtf is rate limiting this host",
+      "description": "myip.wtf answered with HTTP 429. The service allows one request per minute per IP address. Increase the polling interval in the MyIP.wtf options, and check whether another application on this network queries the service as well."
+    },
+    "version_unavailable": {
+      "title": "{version} could not be reached",
+      "description": "The last few polls for {version} failed. That usually means your internet connection does not offer {version}. Turn that IP version off in the MyIP.wtf options to stop the failing requests."
+    }
+  }
+}

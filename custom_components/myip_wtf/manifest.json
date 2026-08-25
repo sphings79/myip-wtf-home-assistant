@@ -1,0 +1,14 @@
+{
+  "domain": "myip_wtf",
+  "name": "MyIP.wtf",
+  "codeowners": ["@sphings79"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/sphings79/myip-wtf-home-assistant",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/sphings79/myip-wtf-home-assistant/issues",
+  "requirements": [],
+  "single_config_entry": true,
+  "version": "1.0.0"
+}

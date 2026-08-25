@@ -1,0 +1,44 @@
+{
+  "entity": {
+    "sensor": {
+      "ip_address": {
+        "default": "mdi:ip-outline"
+      },
+      "hostname": {
+        "default": "mdi:dns-outline"
+      },
+      "isp": {
+        "default": "mdi:transit-connection-variant"
+      },
+      "location": {
+        "default": "mdi:map-marker-outline"
+      },
+      "city": {
+        "default": "mdi:city-variant-outline"
+      },
+      "country": {
+        "default": "mdi:earth"
+      },
+      "country_code": {
+        "default": "mdi:flag-outline"
+      },
+      "ip_changed_at": {
+        "default": "mdi:clock-edit-outline"
+      }
+    },
+    "binary_sensor": {
+      "tor_exit": {
+        "default": "mdi:incognito-off",
+        "state": {
+          "on": "mdi:incognito"
+        }
+      },
+      "reachable": {
+        "default": "mdi:lan-disconnect",
+        "state": {
+          "on": "mdi:lan-connect"
+        }
+      }
+    }
+  }
+}

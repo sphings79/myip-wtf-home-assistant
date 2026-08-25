@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500" role="img" aria-label="Timeline comparison: a per-coordinator budget would send two requests at once, while the shared global budget of this integration keeps at least 60 seconds between the IPv4 and IPv6 request">
+  <defs>
+    <style>
+      .t   { font-family: ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      .h   { font-size: 19px; font-weight: 700; fill: #e6edf3; }
+      .s   { font-size: 14px; fill: #9fb0c0; }
+      .tick{ font-size: 13px; fill: #6f8194; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+      .axis{ stroke: #33465a; stroke-width: 2; }
+      .pill{ font-size: 13px; font-weight: 700; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="500" rx="20" fill="#0f1720"/>
+  <rect x="1" y="1" width="1198" height="498" rx="20" fill="none" stroke="#243141" stroke-width="2"/>
+  <text class="t" x="40" y="46" font-size="13" letter-spacing="2" font-weight="600" fill="#7d8fa1">ONE REQUEST PER MINUTE — FOR THE WHOLE INTEGRATION</text>
+
+  <!-- Panel A -->
+  <g class="t">
+    <rect x="40" y="76" width="1120" height="164" rx="14" fill="#1a1417" stroke="#5e2f34" stroke-width="2"/>
+    <text class="h" x="64" y="112" fill="#ff9a9a">✗ One budget per coordinator</text>
+    <text class="s" x="64" y="138">Both IP versions fire at the same moment — two requests in one minute.</text>
+
+    <line class="axis" x1="140" y1="206" x2="1120" y2="206"/>
+    <g class="tick">
+      <text x="140" y="230" text-anchor="middle">0 s</text>
+      <text x="620" y="230" text-anchor="middle">60 s</text>
+      <text x="1100" y="230" text-anchor="middle">120 s</text>
+    </g>
+    <g>
+      <circle cx="140" cy="206" r="9" fill="#ff6b6b"/>
+      <circle cx="164" cy="206" r="9" fill="#ff6b6b"/>
+      <circle cx="620" cy="206" r="9" fill="#ff6b6b"/>
+      <circle cx="644" cy="206" r="9" fill="#ff6b6b"/>
+      <text class="pill" x="140" y="188" text-anchor="middle" fill="#ff9a9a">v4</text>
+      <text class="pill" x="176" y="188" text-anchor="middle" fill="#ff9a9a">v6</text>
+      <text class="pill" x="620" y="188" text-anchor="middle" fill="#ff9a9a">v4</text>
+      <text class="pill" x="656" y="188" text-anchor="middle" fill="#ff9a9a">v6</text>
+    </g>
+  </g>
+
+  <!-- Panel B -->
+  <g class="t">
+    <rect x="40" y="264" width="1120" height="196" rx="14" fill="#111e1a" stroke="#2f6d54" stroke-width="2"/>
+    <text class="h" x="64" y="300" fill="#7fe9bd">✓ One shared budget (this integration)</text>
+    <text class="s" x="64" y="326">Every request queues behind the same limiter, whatever triggered it.</text>
+
+    <line class="axis" x1="140" y1="402" x2="1120" y2="402"/>
+    <g class="tick">
+      <text x="140" y="426" text-anchor="middle">0 s</text>
+      <text x="620" y="426" text-anchor="middle">60 s</text>
+      <text x="1100" y="426" text-anchor="middle">120 s</text>
+    </g>
+    <path d="M140 386 H620" stroke="#3ddc97" stroke-width="2" stroke-dasharray="5 5" fill="none"/>
+    <text class="s" x="380" y="376" text-anchor="middle" fill="#7fe9bd">≥ 60 s enforced</text>
+    <g>
+      <circle cx="140" cy="402" r="9" fill="#3ddc97"/>
+      <circle cx="620" cy="402" r="9" fill="#3ddc97"/>
+      <text class="pill" x="140" y="446" text-anchor="middle" fill="#7fe9bd">v4</text>
+      <text class="pill" x="620" y="446" text-anchor="middle" fill="#7fe9bd">v6</text>
+      <text class="s" x="1100" y="446" text-anchor="end" fill="#6f8194">next cycle after the polling interval</text>
+    </g>
+  </g>
+</svg>

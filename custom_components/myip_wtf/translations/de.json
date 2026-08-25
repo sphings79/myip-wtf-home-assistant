@@ -1,0 +1,78 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "MyIP.wtf einrichten",
+        "description": "Liest die öffentliche IP-Adresse dieser Home-Assistant-Instanz über den kostenlosen Dienst myip.wtf aus.\n\nDer Dienst wird von Dritten betrieben. Laut Automation Policy ist ein Request pro Minute erlaubt, und nur nicht-kommerzielle Nutzung ({policy_url}). Diese Integration nutzt ein gemeinsames globales Anfrage-Budget, sodass beide IP-Versionen zusammen dieses Limit nie überschreiten.",
+        "data": {
+          "ipv4": "Öffentliche IPv4-Adresse überwachen",
+          "ipv6": "Öffentliche IPv6-Adresse überwachen",
+          "scan_interval": "Abfrageintervall"
+        },
+        "data_description": {
+          "ipv4": "Fragt ipv4.myip.wtf ab.",
+          "ipv6": "Fragt ipv6.myip.wtf ab. Deaktivieren, wenn dein Anschluss kein IPv6 hat.",
+          "scan_interval": "Minuten zwischen zwei Abfragezyklen. Jede aktivierte IP-Version kostet einen Request pro Zyklus, das Minimum ist daher eine Minute je aktivierter Version."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "myip.wtf ist nicht erreichbar. Prüfe die Internetverbindung deines Home-Assistant-Hosts.",
+      "rate_limited": "myip.wtf drosselt diesen Host gerade. Warte eine Minute und versuche es erneut.",
+      "no_ip_version": "Wähle mindestens eine IP-Version aus.",
+      "interval_too_short": "Das Intervall ist für die Anzahl aktivierter IP-Versionen zu kurz. Plane mindestens eine Minute je aktivierter Version ein."
+    },
+    "abort": {
+      "already_configured": "MyIP.wtf ist bereits eingerichtet.",
+      "single_instance_allowed": "Es wird nur ein einzelner MyIP.wtf-Eintrag unterstützt."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "MyIP.wtf-Optionen",
+        "description": "Die Automation Policy von myip.wtf erlaubt insgesamt einen Request pro Minute ({policy_url}). Das Intervall unten gilt für einen kompletten Abfragezyklus über alle aktivierten IP-Versionen.",
+        "data": {
+          "ipv4": "Öffentliche IPv4-Adresse überwachen",
+          "ipv6": "Öffentliche IPv6-Adresse überwachen",
+          "scan_interval": "Abfrageintervall"
+        },
+        "data_description": {
+          "ipv4": "Fragt ipv4.myip.wtf ab.",
+          "ipv6": "Fragt ipv6.myip.wtf ab. Deaktivieren, wenn dein Anschluss kein IPv6 hat.",
+          "scan_interval": "Minuten zwischen zwei Abfragezyklen. Jede aktivierte IP-Version kostet einen Request pro Zyklus, das Minimum ist daher eine Minute je aktivierter Version."
+        }
+      }
+    },
+    "error": {
+      "no_ip_version": "Wähle mindestens eine IP-Version aus.",
+      "interval_too_short": "Das Intervall ist für die Anzahl aktivierter IP-Versionen zu kurz. Plane mindestens eine Minute je aktivierter Version ein."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "ip_address": { "name": "IP-Adresse" },
+      "hostname": { "name": "Hostname" },
+      "isp": { "name": "Internetanbieter" },
+      "location": { "name": "Standort" },
+      "city": { "name": "Stadt" },
+      "country": { "name": "Land" },
+      "country_code": { "name": "Ländercode" },
+      "ip_changed_at": { "name": "IP geändert am" }
+    },
+    "binary_sensor": {
+      "tor_exit": { "name": "Tor-Exit-Node" },
+      "reachable": { "name": "Erreichbar" }
+    }
+  },
+  "issues": {
+    "rate_limited": {
+      "title": "myip.wtf drosselt diesen Host",
+      "description": "myip.wtf hat mit HTTP 429 geantwortet. Der Dienst erlaubt einen Request pro Minute pro IP-Adresse. Erhöhe das Abfrageintervall in den MyIP.wtf-Optionen und prüfe, ob eine andere Anwendung im Netzwerk den Dienst ebenfalls abfragt."
+    },
+    "version_unavailable": {
+      "title": "{version} nicht erreichbar",
+      "description": "Die letzten Abfragen für {version} sind fehlgeschlagen. Meist bedeutet das, dass dein Internetanschluss kein {version} bereitstellt. Deaktiviere diese IP-Version in den MyIP.wtf-Optionen, um die fehlschlagenden Anfragen zu beenden."
+    }
+  }
+}

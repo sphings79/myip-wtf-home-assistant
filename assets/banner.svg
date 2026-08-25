@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" role="img" aria-label="MyIP.wtf for Home Assistant - public IPv4 and IPv6 address sensors, rate limit friendly, no API key required">
+  <defs>
+    <linearGradient id="bbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#141d27"/>
+      <stop offset="0.55" stop-color="#101820"/>
+      <stop offset="1" stop-color="#0b1117"/>
+    </linearGradient>
+    <linearGradient id="btitle" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#9fd8f7"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0v32" fill="none" stroke="#1b2733" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#41BDF5" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#41BDF5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="400" rx="24" fill="url(#bbg)"/>
+  <rect width="1200" height="400" rx="24" fill="url(#grid)" opacity="0.6"/>
+  <ellipse cx="930" cy="120" rx="360" ry="240" fill="url(#glow)"/>
+  <rect x="1" y="1" width="1198" height="398" rx="24" fill="none" stroke="#243141" stroke-width="2"/>
+
+  <g font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+    <text x="64" y="86" font-size="16" font-weight="600" letter-spacing="4" fill="#41BDF5">HOME ASSISTANT · HACS INTEGRATION</text>
+    <text x="64" y="164" font-size="66" font-weight="800" fill="url(#btitle)">MyIP.wtf</text>
+    <text x="64" y="212" font-size="29" font-weight="600" fill="#e6edf3">Public IPv4 &amp; IPv6 address sensors</text>
+    <text x="64" y="248" font-size="19" fill="#9fb0c0">Your WAN address, ISP, country and Tor exit status.</text>
+
+    <g font-size="16" font-weight="600">
+      <g>
+        <rect x="64" y="286" width="196" height="40" rx="20" fill="#16222d" stroke="#2b6f8f"/>
+        <text x="86" y="312" fill="#7fd4f7">⏱ 1 request / minute</text>
+      </g>
+      <g>
+        <rect x="276" y="286" width="150" height="40" rx="20" fill="#16222d" stroke="#2f6d54"/>
+        <text x="298" y="312" fill="#5fe3ae">🔑 No API key</text>
+      </g>
+      <g>
+        <rect x="442" y="286" width="176" height="40" rx="20" fill="#16222d" stroke="#6b5a2a"/>
+        <text x="464" y="312" fill="#ffd257">⚙ UI config flow</text>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(700 62)">
+    <rect width="440" height="276" rx="18" fill="#161f29" stroke="#28394a"/>
+    <rect width="440" height="46" rx="18" fill="#1b2733"/>
+    <rect y="30" width="440" height="16" fill="#1b2733"/>
+    <g font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+      <circle cx="26" cy="23" r="6" fill="#3ddc97"/>
+      <text x="46" y="29" font-size="15" font-weight="600" fill="#c7d5e2">MyIP.wtf IPv4</text>
+      <text x="418" y="29" font-size="13" fill="#7d8fa1" text-anchor="end">updated 3 min ago</text>
+
+      <g font-size="15">
+        <text x="24" y="86" fill="#8ea0b1">IP address</text>
+        <text x="416" y="86" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#e6edf3">203.0.113.7</text>
+        <line x1="24" y1="104" x2="416" y2="104" stroke="#22303e"/>
+
+        <text x="24" y="134" fill="#8ea0b1">Internet provider</text>
+        <text x="416" y="134" text-anchor="end" fill="#e6edf3">Example Telecom</text>
+        <line x1="24" y1="152" x2="416" y2="152" stroke="#22303e"/>
+
+        <text x="24" y="182" fill="#8ea0b1">Country</text>
+        <text x="416" y="182" text-anchor="end" fill="#e6edf3">Germany 🇩🇪</text>
+        <line x1="24" y1="200" x2="416" y2="200" stroke="#22303e"/>
+
+        <text x="24" y="230" fill="#8ea0b1">Tor exit node</text>
+        <text x="416" y="230" text-anchor="end" fill="#3ddc97">Off</text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,46 @@
+name: Bug report
+description: Something is not working as expected
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug.
+
+        This repository is about the **Home Assistant integration**. Problems
+        with the myip.wtf service itself (wrong geolocation, downtime) belong
+        upstream: https://codeberg.org/wtfismyip/wtfismyip
+  - type: input
+    id: ha_version
+    attributes:
+      label: Home Assistant version
+    validations:
+      required: true
+  - type: input
+    id: integration_version
+    attributes:
+      label: MyIP.wtf integration version
+    validations:
+      required: true
+  - type: dropdown
+    id: ip_versions
+    attributes:
+      label: Enabled IP versions
+      options: ["IPv4 only", "IPv6 only", "IPv4 and IPv6"]
+    validations:
+      required: true
+  - type: textarea
+    id: what_happened
+    attributes:
+      label: What happened?
+      description: What did you expect instead?
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: |
+        Enable debug logging first, then paste the log here.
+        Remember to remove your public IP address if you do not want to share it.
+      render: text

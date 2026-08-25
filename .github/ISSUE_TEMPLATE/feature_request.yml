@@ -1,0 +1,22 @@
+name: Feature request
+description: Suggest an addition to the integration
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: How should it work?
+    validations:
+      required: true
+  - type: checkboxes
+    id: policy
+    attributes:
+      label: Rate limit
+      options:
+        - label: My idea works within one request per minute in total (the upstream automation policy).

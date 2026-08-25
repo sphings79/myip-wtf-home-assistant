@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" width="1200" height="640" role="img" aria-label="Architecture of the MyIP.wtf Home Assistant integration: the update coordinator sends requests through one shared rate limiter to the IPv4 and IPv6 endpoints, and the answers become sensors, binary sensors and an IP change event">
+  <defs>
+    <style>
+      .bg   { fill: #0f1720; }
+      .card { fill: #16202b; stroke: #28394a; stroke-width: 2; }
+      .hot  { fill: #1d2430; stroke: #c9922f; stroke-width: 2; }
+      .t    { font-family: ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      .h    { font-size: 20px; font-weight: 700; fill: #e6edf3; }
+      .s    { font-size: 15px; fill: #9fb0c0; }
+      .m    { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 15px; fill: #7fd4f7; }
+      .lbl  { font-size: 13px; fill: #7d8fa1; letter-spacing: 2px; font-weight: 600; }
+      .arrow{ stroke: #41BDF5; stroke-width: 2.5; fill: none; }
+      .arrow2{ stroke: #3ddc97; stroke-width: 2.5; fill: none; stroke-dasharray: 6 5; }
+    </style>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#41BDF5"/>
+    </marker>
+    <marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#3ddc97"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1200" height="640" rx="20"/>
+  <rect x="1" y="1" width="1198" height="638" rx="20" fill="none" stroke="#243141" stroke-width="2"/>
+  <text class="t lbl" x="40" y="46">HOW IT WORKS</text>
+
+  <!-- Coordinator -->
+  <g class="t">
+    <rect class="card" x="40" y="86" width="270" height="180" rx="14"/>
+    <text class="h" x="64" y="126">Update coordinator</text>
+    <text class="s" x="64" y="156">One per config entry.</text>
+    <text class="s" x="64" y="180">Wakes up every</text>
+    <text class="m" x="64" y="206">15 min (default)</text>
+    <text class="s" x="64" y="234">and asks for every enabled</text>
+    <text class="s" x="64" y="254">IP version.</text>
+  </g>
+
+  <path class="arrow" marker-end="url(#ah)" d="M318 176 H392"/>
+
+  <!-- Rate limiter -->
+  <g class="t">
+    <rect class="hot" x="400" y="70" width="320" height="212" rx="14"/>
+    <text class="h" x="424" y="110">Shared request budget</text>
+    <text class="s" x="424" y="138">One global queue for the whole</text>
+    <text class="s" x="424" y="158">integration — not one per version.</text>
+
+    <rect x="424" y="176" width="120" height="34" rx="17" fill="#16222d" stroke="#2b6f8f"/>
+    <text class="m" x="446" y="199">ipv4</text>
+    <rect x="576" y="176" width="120" height="34" rx="17" fill="#16222d" stroke="#2b6f8f"/>
+    <text class="m" x="598" y="199">ipv6</text>
+    <path class="arrow" d="M552 193 H568" marker-end="url(#ah)"/>
+
+    <text class="s" x="424" y="242" fill="#ffd257">≥ 60 s between any two requests</text>
+    <text class="s" x="424" y="264">Backs off further on HTTP 429.</text>
+  </g>
+
+  <path class="arrow" marker-end="url(#ah)" d="M728 140 H812"/>
+  <path class="arrow" marker-end="url(#ah)" d="M728 226 H812"/>
+
+  <!-- Endpoints -->
+  <g class="t">
+    <rect class="card" x="820" y="96" width="340" height="88" rx="14"/>
+    <text class="m" x="844" y="132" font-size="17">ipv4.myip.wtf/json</text>
+    <text class="s" x="844" y="160">A record only → forces IPv4</text>
+
+    <rect class="card" x="820" y="200" width="340" height="88" rx="14"/>
+    <text class="m" x="844" y="236" font-size="17">ipv6.myip.wtf/json</text>
+    <text class="s" x="844" y="264">AAAA record only → forces IPv6</text>
+  </g>
+
+  <!-- Return path -->
+  <path class="arrow2" marker-end="url(#ah2)" d="M990 296 V344 H210 V400"/>
+  <text class="t s" x="600" y="334" text-anchor="middle" fill="#3ddc97">IP · hostname · ISP · city · country · Tor exit</text>
+
+  <!-- Outputs -->
+  <g class="t">
+    <rect class="card" x="40" y="410" width="360" height="190" rx="14"/>
+    <text class="h" x="64" y="450">8 sensors per IP version</text>
+    <text class="s" x="64" y="480">IP address · Hostname · Internet</text>
+    <text class="s" x="64" y="502">provider · Location · City · Country ·</text>
+    <text class="s" x="64" y="524">Country code · IP changed at</text>
+    <text class="s" x="64" y="560" fill="#7d8fa1">One device per IP version.</text>
+
+    <rect class="card" x="424" y="410" width="336" height="190" rx="14"/>
+    <text class="h" x="448" y="450">2 binary sensors</text>
+    <text class="s" x="448" y="480">Tor exit node — is the address a</text>
+    <text class="s" x="448" y="502">known Tor exit?</text>
+    <text class="s" x="448" y="530">Reachable — did the last poll for</text>
+    <text class="s" x="448" y="552">this IP version succeed?</text>
+
+    <rect class="card" x="784" y="410" width="376" height="190" rx="14"/>
+    <text class="h" x="808" y="450">Event on change</text>
+    <text class="m" x="808" y="484">myip_wtf_ip_changed</text>
+    <text class="s" x="808" y="514">Fires with old_ip, new_ip and</text>
+    <text class="s" x="808" y="536">ip_version — ready for DynDNS</text>
+    <text class="s" x="808" y="558">updates or a notification.</text>
+  </g>
+</svg>

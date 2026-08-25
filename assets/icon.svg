@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="MyIP.wtf integration icon: a globe with a network signal arc">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16212c"/>
+      <stop offset="1" stop-color="#0c1219"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#41BDF5"/>
+      <stop offset="1" stop-color="#7C7CF5"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <rect x="6" y="6" width="500" height="500" rx="106" fill="none" stroke="#253243" stroke-width="4"/>
+  <g fill="none" stroke="url(#ring)" stroke-width="14" stroke-linecap="round">
+    <circle cx="256" cy="248" r="122"/>
+    <ellipse cx="256" cy="248" rx="58" ry="122"/>
+    <path d="M141 210h230M141 286h230"/>
+  </g>
+  <circle cx="256" cy="248" r="122" fill="#41BDF5" opacity="0.07"/>
+  <circle cx="256" cy="248" r="26" fill="#0c1219" stroke="#FFC107" stroke-width="14"/>
+</svg>
