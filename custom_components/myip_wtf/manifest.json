@@ -1,7 +1,9 @@
 {
   "domain": "myip_wtf",
   "name": "MyIP.wtf",
-  "codeowners": ["@sphings79"],
+  "codeowners": [
+    "@sphings79"
+  ],
   "config_flow": true,
   "dependencies": [],
   "documentation": "https://github.com/sphings79/myip-wtf-home-assistant",

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 446 160" width="446" height="160" role="img" aria-label="MyIP.wtf">
+  <defs>
+    <linearGradient id="gl" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#41BDF5"/>
+      <stop offset="1" stop-color="#7C7CF5"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(10 18) scale(0.242)">
+    <g fill="none" stroke="url(#gl)" stroke-width="26" stroke-linecap="round">
+      <circle cx="256" cy="256" r="224"/>
+      <ellipse cx="256" cy="256" rx="106" ry="224"/>
+      <path d="M43 186h426M43 326h426"/>
+    </g>
+    <circle cx="256" cy="256" r="36" fill="#FFC107"/>
+  </g>
+  <text x="152" y="106" font-family="Helvetica, Arial, sans-serif" font-size="66" font-weight="bold" fill="url(#gl)">MyIP.wtf</text>
+</svg>
