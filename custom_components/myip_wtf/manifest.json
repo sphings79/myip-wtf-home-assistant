@@ -12,5 +12,5 @@
   "issue_tracker": "https://github.com/sphings79/myip-wtf-home-assistant/issues",
   "requirements": [],
   "single_config_entry": true,
-  "version": "1.0.0"
+  "version": "1.0.1"
 }

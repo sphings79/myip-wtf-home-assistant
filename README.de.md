@@ -154,6 +154,10 @@ jederzeit unter **Einstellungen → Geräte & Dienste → MyIP.wtf → Konfiguri
 | Öffentliche IPv6-Adresse überwachen | an | Fragt `ipv6.myip.wtf` ab. Ausschalten, wenn dein Anschluss kein IPv6 hat. |
 | Abfrageintervall | 15 Minuten | Zeit zwischen zwei vollständigen Abfragezyklen. Minimum: eine Minute je aktivierter IP-Version. |
 
+Wird eine IP-Version abgeschaltet, verschwinden ihr Gerät und alle zugehörigen Entitäten
+beim nächsten Neuladen — sie bleiben nicht als „nicht verfügbar" stehen. Sollte doch einmal
+ein Gerät übrig bleiben, lässt es sich über **Löschen** auf der Geräteseite entfernen.
+
 Beim Einrichten prüft die Integration genau **eine** IP-Version, um zu sehen, ob der Dienst antwortet.
 Eine zweite Prüfung müsste auf den gemeinsamen Anfrage-Slot warten und den Dialog blockieren — die
 andere Version wird deshalb erst beim ersten regulären Abruf verifiziert.

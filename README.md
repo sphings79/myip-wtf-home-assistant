@@ -150,6 +150,10 @@ under **Settings → Devices & services → MyIP.wtf → Configure**.
 | Track public IPv6 address | on | Polls `ipv6.myip.wtf`. Turn it off if your connection has no IPv6. |
 | Polling interval | 15 minutes | Time between two full polling cycles. Minimum: one minute per enabled IP version. |
 
+Turning an IP version off removes its device and all of its entities on the next reload —
+they are not left behind in an unavailable state. If a device ever does survive, the
+**Delete** button on its device page removes it.
+
 At setup time the integration probes exactly **one** IP version to check that the service answers.
 A second probe would have to wait for the shared request slot and stall the dialog, so the other
 version is verified on the first regular poll instead.
