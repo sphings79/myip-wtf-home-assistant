@@ -7,10 +7,12 @@
 **Öffentliche IPv4- und IPv6-Adresse, Provider, Land und Tor-Exit-Status in Home Assistant überwachen.**
 Eine schlanke HACS-Integration auf Basis des kostenlosen Dienstes [myip.wtf](https://myip.wtf/) — ohne API-Key, ohne Account, ohne Cloud-Anbieter dazwischen.
 
-[![HACS: Custom](https://img.shields.io/badge/HACS-Custom-41BDF5.svg?style=for-the-badge)](https://hacs.xyz/)
+[![HACS: Default](https://img.shields.io/badge/HACS-default-41BDF5.svg?style=for-the-badge)](https://hacs.xyz/)
 [![Release](https://img.shields.io/github/v/release/sphings79/myip-wtf-home-assistant?style=for-the-badge&color=41BDF5)](https://github.com/sphings79/myip-wtf-home-assistant/releases)
 [![Home Assistant 2024.12+](https://img.shields.io/badge/Home%20Assistant-2024.12%2B-41BDF5.svg?style=for-the-badge)](https://www.home-assistant.io/)
 [![Lizenz: MIT](https://img.shields.io/badge/License-MIT-3ddc97.svg?style=for-the-badge)](LICENSE)
+
+[![Open your Home Assistant instance and open this repository in HACS.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=sphings79&repository=myip-wtf-home-assistant&category=integration)
 
 [English](README.md) · **Deutsch**
 
@@ -127,11 +129,11 @@ Mit dem Standardintervall von 15 Minuten und beiden IP-Versionen sendet die Inte
 
 ### HACS (empfohlen)
 
-1. **HACS → Integrationen → ⋮ → Benutzerdefinierte Repositories** öffnen.
-2. `https://github.com/sphings79/myip-wtf-home-assistant` mit der Kategorie **Integration** hinzufügen.
-3. Nach **MyIP.wtf** suchen und **Herunterladen** drücken.
-4. **Home Assistant neu starten.**
-5. Unter **Einstellungen → Geräte & Dienste → Integration hinzufügen** **MyIP.wtf** auswählen.
+[![Open your Home Assistant instance and open this repository in HACS.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=sphings79&repository=myip-wtf-home-assistant&category=integration)
+
+1. **HACS** öffnen, nach **MyIP.wtf** suchen und **Herunterladen** drücken (oder den Button oben nutzen).
+2. **Home Assistant neu starten.**
+3. Unter **Einstellungen → Geräte & Dienste → Integration hinzufügen** **MyIP.wtf** auswählen.
 
 ### Manuelle Installation
 
