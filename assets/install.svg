@@ -19,11 +19,11 @@
     <rect x="40" y="80" width="256" height="240" rx="14" fill="#16202b" stroke="#28394a" stroke-width="2"/>
     <circle cx="72" cy="120" r="20" fill="#41BDF5"/><text class="n" x="72" y="128" text-anchor="middle">1</text>
     <text class="h" x="104" y="128">Open HACS</text>
-    <text class="s" x="64" y="176">Open HACS from the</text>
-    <text class="s" x="64" y="198">sidebar. Search is all</text>
-    <text class="s" x="64" y="232">you need: it is in the</text>
-    <text class="s" x="64" y="254">default catalog.</text>
-    <text class="s" x="64" y="276" fill="#7fd4f7">No custom repository.</text>
+    <text class="s" x="64" y="176">Open HACS from</text>
+    <text class="s" x="64" y="198">the sidebar.</text>
+    <text class="s" x="64" y="232">MyIP.wtf is in the</text>
+    <text class="s" x="64" y="254">default catalog, so no</text>
+    <text class="s" x="64" y="276" fill="#7fd4f7">custom repository.</text>
 
     <path d="M304 200 H336" stroke="#33465a" stroke-width="2.5" marker-end="url(#iah)"/>
 
