@@ -121,7 +121,7 @@ With the default interval of 15 minutes and both IP versions enabled, the integr
 
 ## Installation
 
-<img src="assets/install.svg" alt="Installation in four steps: add the custom repository to HACS, install MyIP.wtf, restart Home Assistant, then add the integration and pick your IP versions" width="100%">
+<img src="assets/install.svg" alt="Installation in four steps: open HACS, install MyIP.wtf, restart Home Assistant, then add the integration and pick your IP versions" width="100%">
 
 ### HACS (recommended)
 

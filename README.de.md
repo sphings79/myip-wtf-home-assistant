@@ -125,7 +125,7 @@ Mit dem Standardintervall von 15 Minuten und beiden IP-Versionen sendet die Inte
 
 ## Installation
 
-<img src="assets/install.svg" alt="Installation in vier Schritten: Custom Repository in HACS hinzufügen, MyIP.wtf installieren, Home Assistant neu starten, Integration hinzufügen und IP-Versionen wählen" width="100%">
+<img src="assets/install.svg" alt="Installation in vier Schritten: HACS öffnen, MyIP.wtf installieren, Home Assistant neu starten, Integration hinzufügen und IP-Versionen wählen" width="100%">
 
 ### HACS (empfohlen)
 
